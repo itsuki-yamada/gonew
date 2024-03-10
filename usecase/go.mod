@@ -1,3 +1,3 @@
-module github.com/itsuki-yamada/cleanarchtecture/usecase
+module github.com/itsuki-yamada/gonew/usecase
 
 go 1.22.0

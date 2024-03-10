@@ -3,8 +3,8 @@ package main
 import (
 	"net/http"
 
-	handler "github.com/itsuki-yamada/cleanarchtecture/rest/handler/systems/ping"
-	usecase "github.com/itsuki-yamada/cleanarchtecture/usecase/systems/ping"
+	handler "github.com/itsuki-yamada/gonew/rest/handler/systems/ping"
+	usecase "github.com/itsuki-yamada/gonew/usecase/systems/ping"
 	"github.com/labstack/echo/v4"
 )
 

@@ -3,7 +3,7 @@ package usecase
 import (
 	"context"
 
-	"github.com/itsuki-yamada/cleanarchtecture/domain"
+	"github.com/itsuki-yamada/gonew/domain"
 )
 
 func (ps *PingUsecase) FetchPing(c context.Context) string {

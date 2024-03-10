@@ -1,4 +1,4 @@
-module github.com/itsuki-yamada/cleanarchtecture/rest
+module github.com/itsuki-yamada/gonew/rest
 
 go 1.22.0
 
