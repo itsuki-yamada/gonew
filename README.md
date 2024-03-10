@@ -1,1 +1,0 @@
-# go_clean_archtecture
