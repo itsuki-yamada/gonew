@@ -1,8 +1,10 @@
-package handler
+package ping
 
 import (
 	"context"
+	"net/http"
 
+	"github.com/itsuki-yamada/gonew/domain"
 	"github.com/labstack/echo/v4"
 )
 
@@ -12,7 +14,7 @@ type (
 	}
 
 	PingUsecase interface {
-		FetchPing(c context.Context) string
+		FetchPing(c context.Context, ping domain.Pinger) domain.Message
 	}
 )
 
@@ -22,8 +24,11 @@ func NewPingHandler(u PingUsecase) *PingHandler {
 	}
 }
 
-func (h *PingHandler) Routing(e *echo.Echo) {
-	g := e.Group("/systems")
+func (h *PingHandler) Get(c echo.Context) error {
+	msg := c.QueryParam("msg")
+	ping := domain.NewPinger(msg)
 
-	g.GET("/ping", h.Get)
+	ctx := c.Request().Context()
+	resText := h.usecase.FetchPing(ctx, ping)
+	return c.String(http.StatusOK, string(resText))
 }

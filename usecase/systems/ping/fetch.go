@@ -1,4 +1,4 @@
-package usecase
+package ping
 
 import (
 	"context"
@@ -6,9 +6,6 @@ import (
 	"github.com/itsuki-yamada/gonew/domain"
 )
 
-func (ps *PingUsecase) FetchPing(c context.Context) string {
-	p := domain.Ping{
-		Message: "pong",
-	}
-	return p.Pong()
+func (ps *PingUsecase) FetchPing(c context.Context, ping domain.Pinger) domain.Message {
+	return ping.Pong()
 }

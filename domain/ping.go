@@ -1,15 +1,20 @@
 package domain
 
 type (
-	Ping struct {
-		Message string
-	}
-
 	Pinger interface {
-		Pong() string
+		Pong() Message
+	}
+	ping struct {
+		message Message
 	}
 )
 
-func (p *Ping) Pong() string {
-	return p.Message
+func NewPinger(msg string) Pinger {
+	return &ping{
+		message: newMessage(msg),
+	}
+}
+
+func (p *ping) Pong() Message {
+	return p.message
 }

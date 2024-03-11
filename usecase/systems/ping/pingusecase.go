@@ -1,3 +1,3 @@
-package usecase
+package ping
 
 type PingUsecase struct{}
