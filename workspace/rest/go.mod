@@ -1,4 +1,4 @@
-module github.com/itsuki-yamada/gonew/rest
+module github.com/itsuki-yamada/gonew/workspace/rest
 
 go 1.22.0
 

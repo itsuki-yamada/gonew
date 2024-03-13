@@ -4,6 +4,5 @@ use (
 	./app
 	./domain
 	./rest
-	./template
 	./usecase
 )
