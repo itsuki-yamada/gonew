@@ -1,4 +1,4 @@
-package rest
+package handler
 
 import (
 	"net/http"
@@ -12,6 +12,6 @@ func (h *PingHandler) Get(c echo.Context) error {
 	ping := domain.NewPinger(msg)
 
 	ctx := c.Request().Context()
-	resText := h.usecase.Exec(ctx, ping)
+	resText, _ := h.usecase.Exec(ctx, ping)
 	return c.String(http.StatusOK, string(resText))
 }

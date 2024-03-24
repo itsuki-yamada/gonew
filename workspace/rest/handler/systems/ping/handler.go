@@ -1,4 +1,4 @@
-package rest
+package handler
 
 import (
 	"context"
@@ -12,7 +12,7 @@ type (
 	}
 
 	FetchPingUsecase interface {
-		Exec(c context.Context, ping domain.Pinger) domain.Message
+		Exec(c context.Context, ping domain.Pinger) (domain.Message, error)
 	}
 )
 
